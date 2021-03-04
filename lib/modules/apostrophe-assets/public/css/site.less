@@ -12,14 +12,14 @@ html, body {
 
 // Headers
 .gl-header {
-    height: 80px;
+    // height: 80px;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
 
     .gl-header-logo {
-        max-height: 100%;
+        max-height: 80px;
         max-width: 100px;
 
         .gl-header-logo-img {
@@ -33,9 +33,43 @@ html, body {
         display: flex;
 
         .gl-header-nav-item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin-top: auto;
+            margin-bottom: auto;
+
+            // Dropdown menu
+            .gl-header-nav-item-hover-dropdown {
+                display: none;
+                position: absolute;
+                background-color: white;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .gl-header-nav-item-hover-dropdown-item {
+                display: block;
+                padding: 10px;
+
+                &:hover {
+                    background-color: aqua;
+                }
+            }
+
+            &:hover {
+                .gl-header-nav-item-hover {
+                    background-color: aqua;
+                }
+                .gl-header-nav-item-hover-dropdown {
+                    display: block;
+                }
+            }
+
+            .gl-header-nav-item-hover-dropdown {
+
+            }
+
+            .gl-header-nav-item-hover-dropdown-item {
+
+            }
         }
     }
 }
