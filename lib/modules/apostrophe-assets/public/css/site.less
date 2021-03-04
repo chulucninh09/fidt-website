@@ -1,29 +1,90 @@
 // Global css style begin with gl-
-body {
-    margin: auto;
+html, body {
+    margin: 0;
+    height: 100%;
 }
 
-.gl-header {
+.apos-refreshable {
     display: flex;
-    max-height: 80px;
+    height: 100%;
+    flex-direction: column;
+}
+
+// Headers
+.gl-header {
+    height: 80px;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
-}
-  
-  
-.gl-logo-img {
-    max-height: 80px;
-    object-fit: contain;
-}
-  
-.gl-nav {
-    display: flex;
+
+    .gl-header-logo {
+        max-height: 100%;
+        max-width: 100px;
+
+        .gl-header-logo-img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+      
+    .gl-header-nav {
+        display: flex;
+
+        .gl-header-nav-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
 
-.gl-nav-item {
+// Overflow here to fix header and footer
+.gl-main-content {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+// Footers
+.gl-footer {
+    // background-color: aqua;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-flow: row wrap;
+    height: 90px;
+
+    .gl-footer-contact-line {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+    
+            img {
+                object-fit: contain;
+                max-height: 2em;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .gl-footer-white-space {
+        flex-grow: 2;
+    }
+
+    .gl-footer-social {
+        img {
+            max-height: 2em;
+            margin-right: 5px;
+        }
+    }
+
+    .gl-footer-credit {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+// Hide image title
+.apos-image-widget-image-title {
+    display: none;
 }

@@ -25,5 +25,11 @@ var apos = require('apostrophe')({
     'apostrophe-images': {
       enableAltField: true
     },
+    
+    // Helper module
+    'helpers': {extend: 'apostrophe-module'},
+
+    // Page builder widgets
+    'two-column-widgets': {}
   }
 });
