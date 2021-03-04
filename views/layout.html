@@ -2,70 +2,95 @@
 {% extends data.outerLayout %}
 
 {% block title %}
-  {# Create a useful, SEO-friendly title tag based on what we have #}
-  {% if data.piece %}
-    {{ data.piece.title }}
-  {% elseif data.page %}
-    {{ data.page.title }}
-  {% else %}
-    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
-  {% endif %}
+{# Create a useful, SEO-friendly title tag based on what we have #}
+{% if data.piece %}
+{{ data.piece.title }}
+{% elseif data.page %}
+{{ data.page.title }}
+{% else %}
+{{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
+{% endif %}
 {% endblock %}
 
 {% block extraHead %}
-  {#
+{#
     This block outputs its contents in the HTML document's <head>.
     It is a good place to put extra <script> <link> and <meta> tags.
   #}
 {% endblock %}
 
-{% block beforeMain %}
-  {#
-    We recommend you use the beforeMain block for global page components
-    like headers or navigation.
+{# <div class="gl-container"> #}
+  {# 
+    This block to fixed header and footer
   #}
+
+  {% block beforeMain %}
+  {#
+      We recommend you use the beforeMain block for global page components
+      like headers or navigation.
+    #}
   <div class="gl-header">
-    <div class="gl-logo">
-      <img class="gl-logo-img" src="logo.png" alt="">
+    <div class="gl-header-logo">
+      <img class="gl-header-logo-img" src="logo.png" alt="">
     </div>
-    <div class="gl-nav">
-      <ul class="gl-nav-item"><a href="">Về chúng tôi</a></ul>
-      <ul class="gl-nav-item"><a href="">Tư vấn đầu tư</a></ul>
-      <ul class="gl-nav-item"><a href="">Quản lý tài sản</a></ul>
-      <ul class="gl-nav-item"><a href="">Đào tạo</a></ul>
-      <ul class="gl-nav-item"><a href="">Tiêu điểm đầu tư</a></ul>
-      <ul class="gl-nav-item"><a href="">Đăng nhập</a></ul>
-      <ul class="gl-nav-item"><a href="">EN</a></ul>
-      <ul class="gl-nav-item"><a href="">VI</a></ul>
+    <div class="gl-header-nav">
+      <ul class="gl-header-nav-item"><a href="/about-us">Về chúng tôi</a></ul>
+      <ul class="gl-header-nav-item"><a href="">Tư vấn đầu tư</a></ul>
+      <ul class="gl-header-nav-item"><a href="">Quản lý tài sản</a></ul>
+      <ul class="gl-header-nav-item"><a href="">Đào tạo</a></ul>
+      <ul class="gl-header-nav-item"><a href="">Tiêu điểm đầu tư</a></ul>
+      <ul class="gl-header-nav-item"><a href="">Đăng nhập</a></ul>
+      <ul class="gl-header-nav-item"><a href="">EN</a></ul>
+      <ul class="gl-header-nav-item"><a href="">VI</a></ul>
     </div>
   </div>
-{% endblock %}
+  {% endblock %}
+  
+  {# <div class="gl-main-content"> #}
+    {% block main %}
+    {#
+        Usually, your page templates in the apostrophe-pages module will override
+        this block. It is safe to assume this is where your page-specific content
+        should go.
+      #}
+    {% endblock %}
+  {# </div> #}
 
-{% block main %}
-  {#
-    Usually, your page templates in the apostrophe-pages module will override
-    this block. It is safe to assume this is where your page-specific content
-    should go.
-  #}
-{% endblock %}
 
-{% block afterMain %}
+  {% block afterMain %}
   {#
-    This would be a great place to put a global footer.
-  #}
+      This would be a great place to put a global footer.
+    #}
   <div class="gl-footer">
     <div class="gl-footer-contact">
-      FIDT - 123 HCM
+      <div class="gl-footer-contact-line">
+        <a href="mailto:support@fidt.vn">
+          <img src="https://cdn.iconscout.com/icon/free/png-256/email-1818372-1541480.png" alt="">
+          <span>support@fidt.vn</span>
+        </a>
+      </div>
+      <div class="gl-footer-contact-line">
+        <a href="tel:036%20233%200323">
+          <img src="https://icons-for-free.com/iconfiles/png/512/phone-131964784943439862.png" alt="">
+          <span>036 233 0323</span>
+        </a>
+      </div>
     </div>
+    <div class="gl-footer-white-space"></div>
     <div class="gl-footer-social">
-      <ul>
-        FIDT youtube
-        FIDT FB
-        FIDT Zalo
-      </ul>
+      <a href="https://www.facebook.com/FIDTFanpage">
+        <img src="https://tuongxinh.com.vn/wp-content/uploads/2018/09/facebook-icon.jpg" alt="">
+      </a>
+      <a href="https://www.youtube.com/channel/UCLEAkwK_VFd81fK1KZhJ55Q">
+        <img src="https://i.pinimg.com/474x/d4/48/2b/d4482ba4e7ebdbff7b8ba73e7d39aceb.jpg" alt="">
+      </a>
+      <a href="http://036%20233%200323/">
+        <img src="https://icons-for-free.com/iconfiles/png/512/phone-131964784943439862.png" alt="">
+      </a>
     </div>
     <div class="gl-footer-credit">
       Copyright FIDT@2021
     </div>
   </div>
-{% endblock %}
+  {% endblock %}
+{# </div> #}
