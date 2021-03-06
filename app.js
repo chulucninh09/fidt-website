@@ -1,5 +1,8 @@
 var path = require('path');
 
+// Import settings from settings folder
+const settings = require('./settings')
+
 var apos = require('apostrophe')({
   shortName: 'fidt-website',
 
@@ -20,6 +23,7 @@ var apos = require('apostrophe')({
     // `views/` folder of the project
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
+    settings,
     // Add an alt field to images schema, by default the title is used but
     // we recommend enabling the alt field for clarity.
     'apostrophe-images': {

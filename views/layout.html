@@ -1,6 +1,9 @@
 {# Automatically extends the right outer layout and also handles AJAX siutations #}
 {% extends data.outerLayout %}
 
+{% from "components/dropdownMenu.html" import dropdownMenu as dropdownMenu %}
+{% from "components/singleNavItem.html" import singleNavItem %}
+
 {% block title %}
 {# Create a useful, SEO-friendly title tag based on what we have #}
 {% if data.piece %}
@@ -17,6 +20,8 @@
     This block outputs its contents in the HTML document's <head>.
     It is a good place to put extra <script> <link> and <meta> tags.
   #}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 {% endblock %}
 
 {# <div class="gl-container"> #}
@@ -30,46 +35,23 @@
       like headers or navigation.
     #}
   <div class="gl-header">
-    <div class="gl-header-logo">
-      <img class="gl-header-logo-img" src="logo.png" alt="">
-    </div>
+    <a class="gl-header-logo" href="/">
+        <img class="gl-header-logo-img" src="/logo.png" alt="">
+    </a>
     <div class="gl-header-nav">
-      <ul class="gl-header-nav-item"><a href="/about-us">Về chúng tôi</a></ul>
-      <ul class="gl-header-nav-item">
-        <div class="gl-header-nav-item-hover">Tư vấn đầu tư</div>
-        <div class="gl-header-nav-item-hover-dropdown">
-          <a href="/consulting/stocks/cci" class="gl-header-nav-item-hover-dropdown-item">Đầu tư cổ phiếu toàn diện</a>
-          <a href="/consulting/stocks/short-term-trading" class="gl-header-nav-item-hover-dropdown-item">Trading ngắn hạn</a>
-          <a href="/consulting/bonds" class="gl-header-nav-item-hover-dropdown-item">Trái phiếu</a>
-          <a href="/consulting/real-estate" class="gl-header-nav-item-hover-dropdown-item">Bất động sản</a>
-        </div>
-      </ul>
-      <ul class="gl-header-nav-item">
-        <div class="gl-header-nav-item-hover">Quản lý tài sản</div>
-        <div class="gl-header-nav-item-hover-dropdown">
-          <a href="/management/stocks" class="gl-header-nav-item-hover-dropdown-item">Quản lý danh mục</a>
-          <a href="/management/real-estate" class="gl-header-nav-item-hover-dropdown-item">Quản lý đầu tư BĐS</a>
-          <a href="/management/wealth-management" class="gl-header-nav-item-hover-dropdown-item">Quản lý tài sản cá nhân</a>
-          <a href="/management/fund" class="gl-header-nav-item-hover-dropdown-item">Quỹ đầu tư</a>
-        </div>
-      </ul>
-      <ul class="gl-header-nav-item">
-        <div class="gl-header-nav-item-hover">Đào tạo</div>
-        <div class="gl-header-nav-item-hover-dropdown">
-          <a href="/training/investment" class="gl-header-nav-item-hover-dropdown-item">Kỹ năng đầu tư</a>
-          <a href="/training/private-finance" class="gl-header-nav-item-hover-dropdown-item">Quản lý tài chính cá nhân</a>
-        </div>
-      </ul>
-      <ul class="gl-header-nav-item">
-        <div class="gl-header-nav-item-hover">Tiêu điểm đầu tư</div>
-        <div class="gl-header-nav-item-hover-dropdown">
-          <a href="/spotlight/blog" class="gl-header-nav-item-hover-dropdown-item">Blog đầu tư</a>
-          <a href="/spotlight/report" class="gl-header-nav-item-hover-dropdown-item">Ấn phẩm đầu tư</a>
-        </div>
-      </ul>
-      <ul class="gl-header-nav-item"><a href="">Đăng nhập</a></ul>
-      <ul class="gl-header-nav-item"><a href="">EN</a></ul>
-      <ul class="gl-header-nav-item"><a href="">VI</a></ul>
+      {% for navItem in apos.settings.getOption('headerNavigations') %}
+        {% if navItem.type == 'single' %}
+          {{ singleNavItem(navItem.title, navItem.url) }}
+        {% endif %}
+        
+        {% if navItem.type == 'dropdown' %}
+          {{ dropdownMenu(navItem.title, navItem.menuItems) }}
+        {% endif %}
+      {% endfor %}
+      <div class="gl-header-nav-white-space"></div>
+      <div class="gl-header-nav-item"><a href="">Đăng nhập</a></div>
+      <div class="gl-header-nav-item"><a href="">EN</a></div>
+      <div class="gl-header-nav-item"><a href="">VI</a></div>
     </div>
   </div>
   {% endblock %}

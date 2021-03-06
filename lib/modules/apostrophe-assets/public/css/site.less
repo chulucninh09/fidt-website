@@ -1,18 +1,31 @@
+@import 'themes/theme1.less';
+
 // Global css style begin with gl-
 html, body {
-    margin: 0;
-    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    // height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
-.apos-refreshable {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
+a {
+    text-decoration: none;
 }
+
+// .apos-refreshable {
+//     display: flex;
+//     height: 100%;
+//     flex-direction: column;
+// }
 
 // Headers
 .gl-header {
-    // height: 80px;
+    height: 80px;
+    background: #F2F2F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
@@ -21,42 +34,71 @@ html, body {
     .gl-header-logo {
         max-height: 80px;
         max-width: 100px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 50px;
 
         .gl-header-logo-img {
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
+            padding: 10px;
         }
     }
       
     .gl-header-nav {
-        display: flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    flex-grow: 1;
 
         .gl-header-nav-item {
             margin-top: auto;
             margin-bottom: auto;
+            margin-left: 20px;
+            margin-right: 20px;
+            // flex-shrink: 1;
+
+            // text-transform: uppercase;
+            // font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            color: @blueDark;
+
+            a {
+                color: @blueDark;
+                &:hover {
+                    color: @orangeDark;
+                }
+            }
 
             // Dropdown menu
             .gl-header-nav-item-hover-dropdown {
                 display: none;
                 position: absolute;
                 background-color: white;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
+                border: 1px solid #CBC5C2;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
             }
 
             .gl-header-nav-item-hover-dropdown-item {
                 display: block;
-                padding: 10px;
+                padding: 20px 10px 10px 10px;
+                color: @blueDark;
 
                 &:hover {
-                    background-color: aqua;
+                    // background-color: @orangeLight;
+                    color: @orangeDark;
                 }
             }
 
             &:hover {
                 .gl-header-nav-item-hover {
-                    background-color: aqua;
+                    // color: @blueDark;
+                    color: @orangeDark;
+                    cursor: pointer;
                 }
                 .gl-header-nav-item-hover-dropdown {
                     display: block;
@@ -70,22 +112,29 @@ html, body {
             .gl-header-nav-item-hover-dropdown-item {
 
             }
+
+        }
+        .gl-header-nav-white-space {
+            // display: block;
+            flex-grow: 2;
         }
     }
+    
 }
 
 // Overflow here to fix header and footer
-.gl-main-content {
-    flex-grow: 1;
-    overflow: auto;
-}
+// .gl-main-content {
+//     flex-grow: 1;
+//     overflow: auto;
+// }
 
 // Footers
 .gl-footer {
     // background-color: aqua;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
-    height: 90px;
 
     .gl-footer-contact-line {
         a {
