@@ -1,18 +1,26 @@
 @import "../theme.less";
 
-.button-primary {
-    background: @orangeDark;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+.button {
     border-radius: 22px;
-    border: 0;
-    color: white;
     padding: 10px 15px 10px 15px;
     font-size: 16px;
     cursor: pointer;
-}
-
-.button-flat {
-    background: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-    border-radius: 22px;
+    font-weight: bold;
+    &-primary {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        color: white;
+        background-color: @orangeDark;
+        border: 0;
+        &:hover {
+            background-color: @orangeLight;
+        }
+    }
+    &-flat {
+        border: 3px solid @blueNormal;
+        color: @blueNormal;
+        background-color: white;
+        &:hover {
+            background-color: @blueLight;
+        }
+    }
 }
