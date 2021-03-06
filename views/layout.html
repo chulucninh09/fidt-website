@@ -34,44 +34,44 @@
       We recommend you use the beforeMain block for global page components
       like headers or navigation.
     #}
-  <div class="gl-header">
-    <a class="gl-header-logo" href="/">
-        <img class="gl-header-logo-img" src="/logo.png" alt="">
-    </a>
-    <div class="gl-header-nav">
-      {% for navItem in apos.settings.getOption('headerNavigations') %}
-        {% if navItem.type == 'single' %}
-          {{ singleNavItem(navItem.title, navItem.url) }}
-        {% endif %}
-        
-        {% if navItem.type == 'dropdown' %}
-          {{ dropdownMenu(navItem.title, navItem.menuItems) }}
-        {% endif %}
-      {% endfor %}
-      <div class="gl-header-nav-white-space"></div>
-      <div class="gl-header-nav-item"><a href="">Đăng nhập</a></div>
-      <div class="gl-header-nav-item"><a href="">EN</a></div>
-      <div class="gl-header-nav-item"><a href="">VI</a></div>
+  <div class="gl-header-top">
+    <div class="gl-header">
+      <a class="gl-header-logo" href="/">
+          <img class="gl-header-logo-img" src="/logo.png" alt="">
+      </a>
+      <div class="gl-header-nav">
+        {% for navItem in apos.settings.getOption('headerNavigations') %}
+          {% if navItem.type == 'single' %}
+            {{ singleNavItem(navItem.title, navItem.url) }}
+          {% endif %}
+          
+          {% if navItem.type == 'dropdown' %}
+            {{ dropdownMenu(navItem.title, navItem.menuItems) }}
+          {% endif %}
+        {% endfor %}
+        <div class="gl-header-nav-white-space"></div>
+        <div class="gl-header-nav-item"><a href="">Đăng nhập</a></div>
+        <div class="gl-header-nav-item"><a href="">EN</a></div>
+        <div class="gl-header-nav-item"><a href="">VI</a></div>
+      </div>
     </div>
   </div>
   {% endblock %}
   
-  {# <div class="gl-main-content"> #}
-    {% block main %}
+  {% block main %}
     {#
         Usually, your page templates in the apostrophe-pages module will override
         this block. It is safe to assume this is where your page-specific content
         should go.
       #}
-    {% endblock %}
-  {# </div> #}
+  {% endblock %}
 
 
   {% block afterMain %}
   {#
       This would be a great place to put a global footer.
     #}
-  <div class="gl-footer">
+  {# <div class="gl-footer">
     <div class="gl-footer-contact">
       <div class="gl-footer-contact-line">
         <a href="mailto:support@fidt.vn">
@@ -101,6 +101,6 @@
     <div class="gl-footer-credit">
       Copyright FIDT@2021
     </div>
-  </div>
+  </div> #}
   {% endblock %}
 {# </div> #}

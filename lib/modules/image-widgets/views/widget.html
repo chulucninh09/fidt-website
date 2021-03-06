@@ -1,0 +1,5 @@
+<div class="image-wrapper">
+    {% set img = apos.images.first(data.widget.image) %}
+    {% set img_url = apos.attachments.url(img) %}
+    <img src="{{ img_url }}" alt="">
+</div>

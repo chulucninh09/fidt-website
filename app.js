@@ -34,6 +34,8 @@ var apos = require('apostrophe')({
     'helpers': {extend: 'apostrophe-module'},
 
     // Page builder widgets
-    'two-column-widgets': {}
+    'two-column-widgets': {},
+    'product-widgets': {},
+    'image-widgets': {}
   }
 });

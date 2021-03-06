@@ -1,4 +1,8 @@
-@import 'themes/theme1.less';
+@import 'theme.less';
+@import './components/button.less';
+@import './components/product-widget.less';
+
+@headerHeight: 60px;
 
 // Global css style begin with gl-
 html, body {
@@ -21,10 +25,16 @@ a {
 // }
 
 // Headers
-.gl-header {
-    height: 80px;
+.gl-header-top {
+    height: @headerHeight;
     background: #F2F2F2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gl-header {
+    max-width: @maxWidth;
+    margin-left: auto;
+    margin-right: auto;
 
     display: -webkit-flex;
     display: flex;
@@ -32,17 +42,15 @@ a {
     flex-flow: row wrap;
 
     .gl-header-logo {
-        max-height: 80px;
-        max-width: 100px;
         margin-top: auto;
         margin-bottom: auto;
         margin-right: 50px;
 
         .gl-header-logo-img {
-            max-height: 100%;
-            max-width: 100%;
+            height: @headerHeight;
+            width: @headerHeight;
             object-fit: contain;
-            padding: 10px;
+            padding: 0 15px 0 15px;
         }
     }
       
@@ -106,7 +114,7 @@ a {
             }
 
             .gl-header-nav-item-hover-dropdown {
-
+                z-index: 1;
             }
 
             .gl-header-nav-item-hover-dropdown-item {
@@ -123,10 +131,11 @@ a {
 }
 
 // Overflow here to fix header and footer
-// .gl-main-content {
-//     flex-grow: 1;
-//     overflow: auto;
-// }
+.gl-main-content {
+    max-width: @maxWidth;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 // Footers
 .gl-footer {

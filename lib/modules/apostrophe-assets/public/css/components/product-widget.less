@@ -1,0 +1,57 @@
+@import "../theme.less";
+
+.product-card-img-right {
+    display: flex;
+    flex-flow: row wrap;
+
+    background-color: @backgroundGrey;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+
+    &-left-pane {
+        max-width: 65%;
+        // flex-direction: column;
+    }
+    &-right-pane {
+        display: flex;
+        flex-flow: row-reverse;
+
+        max-width: 35%;
+        flex-grow: 2;
+
+        img {
+            object-fit: contain;
+            max-height: 300px;
+            max-width: 100%;
+        }
+    }
+    &-topic {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        font-weight: bold;
+        color: @blueNormal;
+    }
+    &-name {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: @orangeDark;
+    }
+    &-description {
+        margin-top: 50px;
+    }
+    &-placeholder {
+        flex-grow: 2;
+    }
+    &-register-btn {
+        margin-top: 30px;
+    }
+    &-see-more {
+        margin-top: 30px;
+        display: block;
+    }
+}
