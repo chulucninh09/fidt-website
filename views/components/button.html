@@ -1,5 +1,5 @@
-{% macro button(url) %}
-<form action="{{ url }}">
-    <button class="button-primary">ĐĂNG KÝ NGAY</button>
+{% macro button(url, text, type='primary') %}
+<form action="{{ url }}" class="button-primary-container">
+    <button class="button button-{{ type }}">{{ text }}</button>
 </form>
 {% endmacro %}

@@ -1,32 +1,45 @@
 {% from "components/button.html" import button%}
 
-{% set class = "product-card-img-right"%}
+{% set layout = data.widget.layout %}
+
+{% if layout === 'img-left' %}
+    {% set extraClass = 'img-left' %}
+{% endif %}
+{% if layout === 'img-right' %}
+    {% set extraClass = 'img-right' %}
+{% endif %}
+
+{% set class = "product-card-" + extraClass %}
 
 <div class="{{ class }}">
-    <div class="{{ class + '-left-pane' }}">
-        <div class="{{ class + '-topic' }}">
-            {{ data.widget.topic }}
+    <div class="{{ class + '-info-pane' }}">
+        <div class="{{ class + '-info-pane-container' }}">
+            <div class="{{ class + '-topic' }}">
+                {{ data.widget.topic }}
+            </div>
+            <div class="{{ class + '-name' }}">
+                {{ data.widget.name1 }}
+            </div>
+            <div class="{{ class + '-name' }}">
+                {{ data.widget.name2 }}
+            </div>
+            <div class="{{ class + '-description' }}">
+                {{ apos.singleton(data.widget, 'description', {
+                    controls: {
+                        removable: false,
+                        movable: false
+                    }
+                }) }}
+            </div>
+            <div class="{{ class + '-register-btn' }}">
+                {{ button(data.widget.registerLink, "ĐĂNG KÝ NGAY", 'primary') }}
+            </div>
+            <div class="{{ class + '-register-btn' }}">
+                {{ button(data.widget.detailsLink, "XEM THÊM", 'flat') }}
+            </div>
         </div>
-        <div class="{{ class + '-name' }}">
-            {{ data.widget.name1 }}
-        </div>
-        <div class="{{ class + '-name' }}">
-            {{ data.widget.name2 }}
-        </div>
-        <div class="{{ class + '-description' }}">
-            {{ apos.singleton(data.widget, 'description', {
-                controls: {
-                    removable: false,
-                    movable: false
-                }
-            }) }}
-        </div>
-        <div class="{{ class + '-register-btn' }}">
-            {{ button(data.widget.registerLink) }}
-        </div>
-        <a href="{{ data.widget.detailsLink }}" class="{{ class + '-see-more' }}">Xem thêm >>></a>
     </div>
-    <div class="{{ class + '-right-pane' }}">
+    <div class="{{ class + '-img-pane' }}">
         {% set img = apos.images.first(data.widget.image) %}
         {% set img_url = apos.attachments.url(img) %}
         <img src="{{ img_url }}" alt="">
