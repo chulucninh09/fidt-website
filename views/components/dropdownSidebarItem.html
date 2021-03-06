@@ -1,0 +1,10 @@
+{% macro dropdownSidebarItem(title, menuItems) %}
+<div class="gl-sidebar-item">
+    <div class="gl-sidebar-item-hover">{{ title }}</div>
+    <div class="gl-sidebar-item-hover-dropdown">
+        {% for menuItem in menuItems %}
+            <a href="{{ menuItem.url }}" class="gl-header-nav-item-hover-dropdown-item">{{ menuItem.title }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}

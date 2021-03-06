@@ -6,16 +6,18 @@
 
 // Global css style begin with gl-
 html, body {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
     // height: 100%;
     font-family: 'Roboto', sans-serif;
 }
 
 a {
     text-decoration: none;
+}
+
+.apos-refreshable {
+    margin: 0;
+    width: 100%;
 }
 
 // .apos-refreshable {
@@ -29,6 +31,7 @@ a {
     height: @headerHeight;
     background: #F2F2F2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
 }
 
 .gl-header {
@@ -182,9 +185,92 @@ a {
 }
 
 // Show sidebar menu if display < 1050px
+
+.gl-sidebar {
+    display: none;
+}
+.gl-header-hamburger-btn {
+    display: none;
+}
+
 @media only screen and (max-width: 1050px) {
+    body {
+        display: flex;
+    }
+    .gl-header-top {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
+
+    .gl-main-content {
+        margin-top: 65px;
+    }
+
     .gl-header-nav {
         display: none !important;
         background-color: yellow;
+    }
+    .gl-header-hamburger-btn {
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        cursor: pointer;
+    }
+
+    .gl-header-logo {
+        margin: auto !important;
+    }
+
+    .gl-sidebar-active {
+        margin-left: 0px;
+    }
+
+    .gl-sidebar-inactive {
+        margin-left: -270px;
+    }
+
+    .gl-sidebar {
+        display: block;
+        z-index: 1;
+        position: fixed;
+        top: 65px;
+        // left: 0;
+        width: 250px;
+        height: 100vh;
+        transition: 0.5s;
+        background-color: @backgroundGrey;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding-left: 20px;
+
+        &-item {
+            font-weight: bold;
+            font-size: 16px;
+            color: @blueDark;
+            padding: 10px 0 10px 0;
+            margin-top: auto;
+            margin-bottom: auto;
+            
+            // height: 20px;
+
+            &-hover {
+                padding: 10px 0 10px 0;
+                margin-top: auto;
+                margin-bottom: auto;
+
+                &-dropdown {
+                    a {
+                        display: block;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                    }
+                }
+            }
+        }
     }
 }
