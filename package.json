@@ -18,6 +18,7 @@
   "nodemonConfig": {
     "verbose": true,
     "ignore": [
+      "lib/modules/*/public/js/*.js",
       "locales/*.json",
       "public/modules/**/*.less",
       "public/modules/**/*.js",
@@ -25,7 +26,8 @@
       "public/apos-minified/*.js",
       "public/css/master-*.less",
       "data",
-      "node_modules"
+      "node_modules",
+      "public"
     ],
     "ext": "json, js, html, less"
   }
