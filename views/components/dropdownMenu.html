@@ -3,7 +3,10 @@
 <div class="gl-header-nav-item-hover">{{ title }}</div>
 <div class="gl-header-nav-item-hover-dropdown">
     {% for menuItem in menuItems %}
-        <a href="{{ menuItem.url }}" class="gl-header-nav-item-hover-dropdown-item">{{ menuItem.title }}</a>
+        <div class="dropdown-item">
+            <div class="dropdown-item-band"></div>
+            <a href="{{ menuItem.url }}" class="dropdown-item-title">{{ menuItem.title }}</a>
+        </div>
     {% endfor %}
 </div>
 </div>

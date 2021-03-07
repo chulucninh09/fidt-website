@@ -1,0 +1,46 @@
+@import '../theme.less';
+
+.homepage-show-off-item-container {
+    display: flex;
+
+    .box {
+        background-color: rgba(0,0,0,0);
+        border: solid 2px @orangeDark;
+        width: 40px;
+        height: 40px;
+    }
+
+    .content {
+        margin-left: 17px;
+        
+        .big-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .explain {
+            font-size: 13px;
+            color: white;
+        }
+    }
+}
+
+.home-page-show-off-bar-container {
+    margin-top: 30px;
+    
+    display: flex;
+    background-color: @blueDark;
+    .box-container {
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+
+        .homepage-show-off-item-container {
+            &:last-child {
+                margin-right: auto;
+            }
+            margin-right: 120px;
+        }
+    }
+} 

@@ -40,17 +40,12 @@
       like headers or navigation.
     #}
 <div class="gl-header-top">
+  <div class="gl-header-band"></div>
   <div class="gl-header">
-    {# Hamburger button, display none in desktop, show in mobile #}
-    <div 
-      class="gl-header-hamburger-btn"
-      onClick="toggleSidebar()"
-    >☰</div>
-
     <a class="gl-header-logo" href="/">
       <img class="gl-header-logo-img" src="/logo.png" alt="">
     </a>
-    <div class="gl-header-nav">
+    <div class="gl-header-left-nav">
       {% for navItem in apos.settings.getOption('headerNavigations') %}
         {% if navItem.type == 'single' %}
           {{ singleNavItem(navItem.title, navItem.url) }}
@@ -61,27 +56,14 @@
         {% endif %}
       {% endfor %}
       <div class="gl-header-nav-white-space"></div>
-      <div class="gl-header-nav-item"><a href="">Đăng nhập</a></div>
-      <div class="gl-header-nav-item"><a href="">EN</a></div>
-      <div class="gl-header-nav-item"><a href="">VI</a></div>
+      <div class="gl-header-right-nav">
+        <div class="gl-header-nav-item"><a href="">Đăng nhập</a></div>
+        <div class="gl-header-nav-item"><a href="">EN</a></div>
+        <div class="gl-header-nav-item"><a href="">VI</a></div>
+      </div>
+      
     </div>
   </div>
-</div>
-
-{# Sidebar will only show in mobile #}
-<div id="gl-sidebar" class="gl-sidebar gl-sidebar-inactive">
-    {% for navItem in apos.settings.getOption('headerNavigations') %}
-      {% if navItem.type == 'single' %}
-        {{ singleSidebarItem(navItem.title, navItem.url) }}
-      {% endif %}
-
-      {% if navItem.type == 'dropdown' %}
-        {{ dropdownSidebarItem(navItem.title, navItem.menuItems) }}
-      {% endif %}
-    {% endfor %}
-    <div class="gl-sidebar-item"><a href="">Đăng nhập</a></div>
-    <div class="gl-sidebar-item"><a href="">EN</a></div>
-    <div class="gl-sidebar-item"><a href="">VI</a></div>
 </div>
 {% endblock %}
 

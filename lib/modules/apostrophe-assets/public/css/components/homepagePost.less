@@ -1,0 +1,52 @@
+@import '../theme.less';
+
+.homepage-post-container {
+    height: 295px;
+    width: 250px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    img {
+        height: 130px;
+        width: 250px;
+        object-fit: cover;
+    }
+
+    .title {
+        font-size: 13px;
+        font-weight: bold;
+        color: @blueDark;
+        padding-top: 10px;
+    }
+
+    .tags {
+        padding-top: 10px;
+
+        .post-tag {
+            margin: 0 10px 0 0;
+        }
+    }
+
+    .short-note {
+        font-size: 13px;
+        padding-top: 10px;
+        color: black;
+    }
+
+    .placeholder {
+        flex-grow: 2;
+    }
+
+    .divider {
+        height: 1px;
+        background-color: @greyLight;
+    }
+
+    .date {
+        font-size: 13px;
+        padding-top: 10px;
+        color: black;
+    }
+}

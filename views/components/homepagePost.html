@@ -1,0 +1,17 @@
+{% from "components/postTag.html" import postTag %}
+
+{% macro homepagePost(post) %}
+    <a class="homepage-post-container" href="{{ post.url }}">
+        <img src="{{ post.img }}" alt="">
+        <div class="title">{{ post.title }}</div>
+        <div class="tags">
+            {% for tag in post.tags %}
+                {{ postTag(tag.tagName) }}
+            {% endfor %}
+        </div>
+        <div class="short-note">{{ post.shortNote }}</div>
+        <div class="placeholder"></div>
+        <div class="divider"></div>
+        <div class="date">{{ post.date }}</div>
+    </a>
+{% endmacro %}

@@ -3,14 +3,100 @@
   that lives in the top-level views/ folder for convenience
 #}
 
+{% from "components/homepageBanner.html" import homepageBanner %}
+{% from "components/postTag.html" import postTag%}
+{% from "components/homepagePost.html" import homepagePost %}
+{% from "components/homepagePostList.html" import homepagePostList %}
+{% from "components/homepageShowOffBar.html" import homepageShowOffBar %}
+
 {% extends "layout.html" %}
+
+{% set posts = [
+{
+   "img":"https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg",
+   "title":"Xin chào cô gái tháng Tư của tôi",
+   "tags":[
+      {
+         "tagName":"Vĩ mô"
+      },
+      {
+         "tagName":"Ca nhạc"
+      }
+   ],
+   "shortNote":"Không còn gì để nói cả, thích làm gì thì làm, viết cho dài ra để test là chính, chắc phải viết thêm tầm chục dòng nữa nữa nữa nữa chán quá rồi những phải cố viết",
+   "date":"03/05/2021",
+   "url": "/"
+},{
+   "img":"https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg",
+   "title":"Xin chào cô gái tháng Tư của tôi",
+   "tags":[
+      {
+         "tagName":"Vĩ mô"
+      },
+      {
+         "tagName":"Ca nhạc"
+      }
+   ],
+   "shortNote":"Không còn gì để nói cả, thích làm gì thì làm, viết cho dài ra để test là chính, chắc phải viết thêm tầm chục dòng nữa nữa nữa nữa chán quá rồi những phải cố viết",
+   "date":"03/05/2021",
+   "url": "/"
+},{
+   "img":"https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg",
+   "title":"Xin chào cô gái tháng Tư của tôi",
+   "tags":[
+      {
+         "tagName":"Vĩ mô"
+      },
+      {
+         "tagName":"Ca nhạc"
+      }
+   ],
+   "shortNote":"Không còn gì để nói cả, thích làm gì thì làm, viết cho dài ra để test là chính, chắc phải viết thêm tầm chục dòng nữa nữa nữa nữa chán quá rồi những phải cố viết",
+   "date":"03/05/2021",
+   "url": "/"
+},{
+   "img":"https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg",
+   "title":"Xin chào cô gái tháng Tư của tôi",
+   "tags":[
+      {
+         "tagName":"Vĩ mô"
+      },
+      {
+         "tagName":"Ca nhạc"
+      }
+   ],
+   "shortNote":"Không còn gì để nói cả, thích làm gì thì làm, viết cho dài ra để test là chính, chắc phải viết thêm tầm chục dòng nữa nữa nữa nữa chán quá rồi những phải cố viết",
+   "date":"03/05/2021",
+   "url": "/"
+}
+]
+
+%}
+
+{% set showOffItems = [
+   {
+      "bigNumber": "30+",
+      "explain": "Thành viên"
+   },
+   {
+      "bigNumber": "30+",
+      "explain": "Thành viên"
+   },
+   {
+      "bigNumber": "30+",
+      "explain": "Thành viên"
+   },
+   {
+      "bigNumber": "30+",
+      "explain": "Thành viên"
+   }
+] %}
 
 {% block main %}
   <div id="gl-main-content" class="gl-main-content">
-    {{ apos.area(data.page, 'body', {
-      widgets: {
-        'product': {}
-      }
-    }) }}
+    {{ homepageBanner() }}
+    {{ homepagePostList("INVESTMENT BLOG", posts, "#") }}
+    {{ homepagePostList("ẤN PHẨM ĐẦU TƯ", posts, "#") }}
+    {{ homepageShowOffBar(showOffItems) }}
   </div>
 {% endblock %}

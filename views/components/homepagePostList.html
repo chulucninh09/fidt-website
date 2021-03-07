@@ -1,0 +1,18 @@
+{% from "components/homepagePost.html" import homepagePost %}
+
+{% macro homepagePostList(title, posts, url) %}
+    <div class="homepage-post-list-container">
+        <div class="vertical-line"></div>
+        <div class="body">
+            <div class="header">
+                <span>{{ title }}</span>
+                <a href="{{ url }}">Xem thêm >>></a>
+            </div>
+            <div class="post-list">
+                {% for post in posts %}
+                    {{ homepagePost(post) }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
