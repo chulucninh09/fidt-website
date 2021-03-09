@@ -3,7 +3,6 @@
   that lives in the top-level views/ folder for convenience
 #}
 
-{% from "components/homepageBanner.html" import homepageBanner %}
 {% from "components/postTag.html" import postTag%}
 {% from "components/homepagePost.html" import homepagePost %}
 {% from "components/homepagePostList.html" import homepagePostList %}
@@ -94,9 +93,19 @@
 
 {% block main %}
   <div id="gl-main-content" class="gl-main-content">
-    {{ homepageBanner() }}
+    {{ apos.singleton(data.page, 'homepageBanner', 'homepage-banner', {}) }}
     {{ homepagePostList("INVESTMENT BLOG", posts, "#") }}
     {{ homepagePostList("ẤN PHẨM ĐẦU TƯ", posts, "#") }}
-    {{ homepageShowOffBar(showOffItems) }}
+
+    {{ apos.area(data.page, 'body', {
+      widgets: {
+         'left-products': {},
+         'right-products': {},
+         'about-us-banner': {}
+      }
+    }) }}
+
+    {{ apos.singleton(data.page, 'aboutUsBanner', 'about-us-banner', {}) }}
+    {{ apos.singleton(data.page, 'showOffBar', 'homepage-show-off-bar', {}) }}
   </div>
 {% endblock %}

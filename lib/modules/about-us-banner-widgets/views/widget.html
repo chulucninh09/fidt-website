@@ -1,0 +1,13 @@
+{% set img = apos.images.first(data.widget.backgroundImage) %}
+{% set imageSrc = apos.attachments.url(img) %}
+
+<div class="about-us-banner__container"
+    style="
+        background-image: url('{{ imageSrc }}');
+        ">
+>
+    <div class="about-us-banner__title">Về chúng tôi</div>
+    <div class="about-us-banner__description">
+        {{ apos.singleton(data.widget, 'description', 'apostrophe-rich-text', {}) }}
+    </div>
+</div>

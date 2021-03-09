@@ -1,0 +1,33 @@
+{% macro bulletPoint(iconUrl, url, content="") %}
+<a href="{{ url }}" class="footer-bullet-point__container">
+    <div class="footer-bullet-point__icon">
+        <img src="/icons/{{ iconUrl }}" alt="">
+    </div>
+    <div class="footer-bullet-point__content">
+        {{ content }}
+    </div>
+</a>
+{% endmacro %}
+<div class="footer__page-footer">
+    <div class="footer__top-border"></div>
+    <div class="footer__container">
+        <div class="footer__content">
+            <div class="footer__logo">
+                <img src="/logo.png" alt="">
+            </div>
+            <div class="footer__contact">
+                <div class="footer__contact-header">Thông tin liên hệ</div>
+                {{ bulletPoint("location.png", data.widget.addressLink, data.widget.address) }}
+                {{ bulletPoint("email.png", 'mailto:' + data.widget.email, data.widget.email) }}
+                {{ bulletPoint("phone.png", 'tel:' + data.widget.phone, data.widget.phone) }}
+            </div>
+            <div class="footer__social">
+                <div class="footer__social-header">Theo dõi FIDT tại</div>
+                {{ bulletPoint("facebook.png", data.widget.facebookLink, "Facebook") }}
+                {{ bulletPoint("youtube.png", data.widget.youtubeLink, "Youtube") }}
+                {{ bulletPoint("linkedin.png", data.widget.linkedinLink, "Linkedin") }}
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom-border"></div>
+</div>

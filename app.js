@@ -33,9 +33,16 @@ var apos = require('apostrophe')({
     // Helper module
     'helpers': {extend: 'apostrophe-module'},
 
+    // Homepage widgets
+    'homepage-banner-widgets': {},
+    'homepage-show-off-bar-widgets': {},
+    'left-products-widgets': {},
+    'right-products-widgets': {},
+    'about-us-banner-widgets': {},
+    'footer-widgets': {},
+    
     // Page builder widgets
     'two-column-widgets': {},
-    'product-widgets': {},
     'image-widgets': {}
   }
 });

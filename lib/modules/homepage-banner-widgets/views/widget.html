@@ -1,0 +1,16 @@
+{% from "components/button.html" import button %}
+
+{% set img = apos.images.first(data.widget.bannerImage) %}
+{% set imageSrc = apos.attachments.url(img) %}
+
+<div class="homepage-banner"
+    style="
+    background-image: url('{{ imageSrc }}');
+    ">
+    <p class="banner-title">{{ data.widget.slogan }}</p>
+    <p class="banner-tagline">{{ data.widget.tagLine }}</p>
+    <div class="banner-buttons">
+        {{ button("#", "VỀ CHÚNG TÔI") }}
+        {{ button("#", "SẢN PHẦM", "flat") }}
+    </div>
+</div>

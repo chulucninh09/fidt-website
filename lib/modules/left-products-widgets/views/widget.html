@@ -1,0 +1,23 @@
+{% set img = apos.images.first(data.widget.image) %}
+{% set imageSrc = apos.attachments.url(img) %}
+
+<div class="left-product-widget__container">
+    <div class="left-product-widget__side-column"></div>
+    <div class="left-product-widget__content-container">
+        <div class="left-product-widget__top-border"></div>
+        <div class="left-product-widget__info-container">
+            <div class="left-product-widget__category">{{ data.widget.category }}</div>
+            <div class="left-product-widget__product-name-1">{{ data.widget.productName1 }}</div>
+            <div class="left-product-widget__product-name-2">{{ data.widget.productName2 }}</div>
+            <div class="left-product-widget__product-description">{{ apos.singleton(data.widget, 'description', 'apostrophe-rich-text', {} ) }}</div>
+            <form action="{{ data.widget.detailsLink }}" class="left-product-widget__see-more-container">
+                <button class="left-product-widget__see-more-button">
+                    XEM THÊM
+                </button>
+            </form>
+        </div>
+        <div class="left-product-widget__image-container">
+            <img src="{{ imageSrc }}" alt="">
+        </div>
+    </div>
+</div>
