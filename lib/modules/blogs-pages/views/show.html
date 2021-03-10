@@ -8,7 +8,7 @@
     <div class="blog-post__container">
         <div class="blog-post__paper">
             <div class="blog-post__issue-date">{{ data.piece.issueDate }}</div>
-            <div class="blog-post__title">{{ data.piece.title }}</div>
+            <h1 class="blog-post__title">{{ data.piece.title }}</h1>
             <div class="blog-post__preview">
                 {{ apos.singleton(data.piece, 'preview', 'apostrophe-rich-text') }}
             </div>
@@ -17,12 +17,11 @@
             </div>
             <div class="blog-post__content">
                 {{ apos.area(data.piece, 'content', {
-                    widgets: {
-                        'apostrophe-rich-text': {}
-                    }
-                }) }}
+                    widgets: apos.helpers.widgets}) }}
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
+{# toolbar: ['bold', 'italic', 'strike', 'link', 'horizontal_rule', 'bullet_list', 'ordered_list', 'blockquote', 'code_block', 'styles', 'undo', 'redo'], #}

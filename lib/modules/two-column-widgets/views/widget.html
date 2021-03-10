@@ -1,10 +1,10 @@
 <div class='two-col-widget'>
-    <div style='min-width: 50%' class='two-col-widget-first-col'>
+    <div style='width: {{ data.widget.firstColWidth }}' class='two-col-widget-first-col'>
         {{apos.area( data.widget, 'col1', {
             widgets: apos.helpers.widgets
         })}}
     </div>
-    <div style='min-width: 50%' class='two-col-widget-first-col'>
+    <div style='min-width: {{ data.widget.secondColWidth }}' class='two-col-widget-first-col'>
         {{apos.area( data.widget, 'col2', {
             widgets: apos.helpers.widgets
         })}}
