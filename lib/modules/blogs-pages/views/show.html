@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% set imgObj = apos.images.first(data.piece.coverImage) %}
+{% set imgSrc = apos.attachments.url(imgObj) %}
+
+{% block main %}
+<div class="gl-main-content">
+    <div class="blog-post__container">
+        <div class="blog-post__paper">
+            <div class="blog-post__issue-date">{{ data.piece.issueDate }}</div>
+            <div class="blog-post__title">{{ data.piece.title }}</div>
+            <div class="blog-post__preview">
+                {{ apos.singleton(data.piece, 'preview', 'apostrophe-rich-text') }}
+            </div>
+            <div class="blog-post__cover-image">
+                <img src="{{ imgSrc }}" alt="">
+            </div>
+            <div class="blog-post__content">
+                {{ apos.area(data.piece, 'content', {
+                    widgets: {
+                        'apostrophe-rich-text': {}
+                    }
+                }) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -12,6 +12,7 @@
     "
     >
     <img src='{{ iconSrc }}' class="featured-post__icon" alt="">
-    <div class="featured-post__title">{{ data.widget._featuredPost.title }}</div>
-    <div class="featured-post__preview">{{ apos.singleton(data.widget._featuredPost, 'preview', 'apostrophe-rich-text', {}) }}</div>
+    <div class="featured-post__title">{{ data.widget_featuredPost.title }}</div>
+    <div class="featured-post__preview">{{ data.widget._featuredPost.preview.items[0].content | safe }}</div>
+    <a class="featured-post__see-more" href="{{ data.widget._featuredPost._url }}">Xem thêm >>></a>
 </div>

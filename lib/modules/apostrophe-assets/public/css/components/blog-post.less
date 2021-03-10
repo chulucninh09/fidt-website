@@ -1,0 +1,68 @@
+@import '../theme.less';
+
+.blog-post {
+    &__container {
+        width: @desktopMaxWidth;
+        background-color: @greyLight;
+        display: flex;
+    }
+
+    &__paper {
+        width: 800px;
+        margin: 40px auto 20px auto;
+
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__issue-date {
+        height: 30px;
+        width: 125px;
+        margin: 50px auto 0 auto;
+
+        border: 1px solid @blueDark;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        color: @blueDark;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    &__title {
+        max-width: 640px;
+        margin: 40px auto 0 auto;
+
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: @blueNormal;
+    }
+
+    &__preview {
+        max-width: 500px;
+        margin: 30px auto 0 auto;
+
+        font-size: 13px;
+        color: @blueNormal;
+    }
+
+    &__cover-image {
+        margin: 35px auto 0 auto;
+        width: 600px;
+        height: 300px;
+        
+        img {
+            width: 600px;
+            height: 300px;
+            object-fit: cover;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__content {
+        width: 600px;
+        margin: 30px auto 100px auto;
+        font-size: 13px;
+        line-height: 25px;
+    }
+}
