@@ -2,6 +2,7 @@
 
 {% set img = apos.images.first(data.widget.bannerImage) %}
 {% set imageSrc = apos.attachments.url(img) %}
+{% set focalPoint = apos.attachments.focalPointToBackgroundPosition(img) %}
 
 <div class="homepage-banner"
     style="

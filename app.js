@@ -43,6 +43,9 @@ var apos = require('apostrophe')({
     
     // Page builder widgets
     'two-column-widgets': {},
-    'image-widgets': {}
+    'image-widgets': {},
+
+    // Blog posts
+    'blog-posts': {}
   }
 });
