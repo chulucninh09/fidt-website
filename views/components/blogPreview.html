@@ -1,0 +1,28 @@
+{% from "components/postTag.html" import postTag %}
+
+{% macro blogPreview(blog) %}
+
+{% set imgObj = apos.images.first(blog.coverImage) %}
+{% set imgSrc = apos.attachments.url(imgObj) %}
+
+{# {{ apos.log(dat) }} #}
+
+<a class="blog-preview__container" href="{{ blog._url }}">
+    <div class="blog-preview__border-top"></div>
+    <div class="blog-preview__content-container">
+        <div class="blog-preview__cover-image">
+            <img src="{{ imgSrc }}" alt="">
+        </div>
+        <div class="blog-preview__info-container">
+            <div class="blog-preview__title">{{ blog.title }}</div>
+            <div class="blog-preview__issue-date">{{ blog.usseDate }}</div>
+            <div class="blog-preview__tags">
+                {% for tag in blog.tags %}
+                    {{ postTag(tag) }}
+                {% endfor %}
+            </div>
+            <div class="blog-preview__preview">{{ apos.singleton(blog, 'preview', 'apostrophe-rich-text', {}) }}</div>
+        </div>
+    </div>
+</a>
+{% endmacro %}

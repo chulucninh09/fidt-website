@@ -46,6 +46,8 @@ var apos = require('apostrophe')({
     'image-widgets': {},
 
     // Blog posts
-    'blog-posts': {}
+    'blogs': {},
+    'blogs-pages': {},
+    'featured-post-widgets': {}
   }
 });

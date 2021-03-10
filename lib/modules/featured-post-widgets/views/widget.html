@@ -1,0 +1,17 @@
+{% set backgroundImgObj = apos.images.first(data.widget.backgroundImage) %}
+{% set backgroundImgSrc = apos.attachments.url(backgroundImgObj) %}
+
+{{ apos.log(data.widget._featurePost.coverImage) }}
+
+{% set iconObj = apos.images.first(data.widget.icon) %}
+{% set iconSrc = apos.attachments.url(iconObj) %}
+
+<div class="featured-post__container"
+    style= "
+        background-image: url({{ backgroundImgSrc }})
+    "
+    >
+    <img src='{{ iconSrc }}' class="featured-post__icon" alt="">
+    <div class="featured-post__title">{{ data.widget._featuredPost.title }}</div>
+    <div class="featured-post__preview">{{ apos.singleton(data.widget._featuredPost, 'preview', 'apostrophe-rich-text', {}) }}</div>
+</div>
