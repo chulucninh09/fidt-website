@@ -1,26 +1,55 @@
 @import "../theme.less";
 
-.button {
-    border-radius: 11px;
-    padding: 10px 20px 10px 20px;
-    font-size: 13px;
-    cursor: pointer;
-    font-weight: bold;
-    &-primary {
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        color: white;
-        background-color: @orangeDark;
-        border: 0;
-        &:hover {
-            background-color: @orangeLight;
+@media only screen and (min-width: 1280px) {
+    .button {
+        border-radius: 11px;
+        padding: 10px 20px 10px 20px;
+        font-size: 13px;
+        cursor: pointer;
+        font-weight: bold;
+        &-primary {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: white;
+            background-color: @orangeDark;
+            border: 0;
+            &:hover {
+                background-color: @orangeLight;
+            }
+        }
+        &-flat {
+            border: 1px solid @blueDark;
+            color: @blueDark;
+            background-color: white;
+            &:hover {
+                background-color: @blueLight;
+            }
         }
     }
-    &-flat {
-        border: 1px solid @blueDark;
-        color: @blueDark;
-        background-color: white;
-        &:hover {
-            background-color: @blueLight;
+}
+
+@media only screen and (max-width: 768px) {
+    .button {
+        border-radius: 11px;
+        padding: 8px 10px 8px 10px;
+        font-size: 9px;
+        cursor: pointer;
+        font-weight: bold;
+        &-primary {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: white;
+            background-color: @orangeDark;
+            border: 0;
+            &:hover {
+                background-color: @orangeLight;
+            }
+        }
+        &-flat {
+            border: 1px solid @blueDark;
+            color: @blueDark;
+            background-color: white;
+            &:hover {
+                background-color: @blueLight;
+            }
         }
     }
 }

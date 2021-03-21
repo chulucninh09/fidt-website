@@ -1,44 +1,95 @@
 @import '../theme.less';
 
-.homepage-post-list-container {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
+@media only screen and (min-width: 1280px) {
+    
+    .homepage-post-list-container {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
 
-    display: flex;
-    height: 335px;
+        display: flex;
+        height: 335px;
 
-    .vertical-line {
-        height: 100%;
-        width: 5px;
-        background-color: @orangeDark;
-    }
-
-    .body {
-        padding-left: 10px;
-
-        .header {
-            width: 100%;
-
-            span {
-                font-size: 15px;
-                font-weight: bold;
-                color: @blueDark;
-            }
-
-            a {
-                padding-left: 20px;
-                color: @orangeDark;
-                font-size: 13px;
-            }
+        .vertical-line {
+            height: 100%;
+            width: 5px;
+            background-color: @orangeDark;
         }
 
-        .post-list {
-            padding-top: 20px;
-            display: flex;
+        .body {
+            padding-left: 10px;
 
-            .homepage-post-container {
-                margin-right: 50px;
+            .header {
+                width: 100%;
+
+                span {
+                    font-size: 15px;
+                    font-weight: bold;
+                    color: @blueDark;
+                }
+
+                a {
+                    padding-left: 20px;
+                    color: @orangeDark;
+                    font-size: 13px;
+                }
+            }
+
+            .post-list {
+                padding-top: 20px;
+                display: flex;
+
+                .homepage-post-container {
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .homepage-post-list-container {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+
+        display: flex;
+        height: 335px;
+        max-width: 100vh;
+
+        .vertical-line {
+            height: 100%;
+            width: 5px;
+            background-color: @orangeDark;
+        }
+
+        .body {
+            padding-left: 10px;
+
+            .header {
+                width: 100%;
+
+                span {
+                    font-size: 15px;
+                    font-weight: bold;
+                    color: @blueDark;
+                }
+
+                a {
+                    padding-left: 20px;
+                    color: @orangeDark;
+                    font-size: 13px;
+                }
+            }
+
+            .post-list {
+                padding-top: 20px;
+                display: flex;
+
+                .homepage-post-container {
+                    margin-right: 50px;
+                }
             }
         }
     }

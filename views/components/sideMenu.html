@@ -1,0 +1,33 @@
+{% macro singleSideMenuItem(title, url) %}
+    <a href="{{ url }}" class="side-menu--single-item">{{ title }}</a>
+{% endmacro %}
+
+{% macro dropdownSideMenuItem(title, subItems) %}
+    <div class="side-menu--dropdown-menu__container">
+        <div class="side-menu--dropdown-menu__title" onClick="expandDropdownMenu(this)">
+            {{ title }}
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="side-menu--dropdown-menu__sub-item__container">
+            {% for subItem in subItems %}
+                <a href="{{ subItem.url }}" class="side-menu--dropdown-menu__sub-item__item">{{ subItem.title }}</a>
+            {% endfor %}
+        </div>
+        
+    </div>
+{% endmacro %}
+
+{% macro sideMenu(navigations) %}
+<div class="side-menu__container" id="side-menu">
+    {% for navItem in navigations %}
+        {% if navItem.type == 'single' %}
+            {{ singleSideMenuItem(navItem.title, navItem.url) }}
+        {% endif %}
+
+        {% if navItem.type == 'dropdown' %}
+            {{ dropdownSideMenuItem(navItem.title, navItem.menuItems) }}
+        {% endif %}
+    {% endfor %}
+</div>
+<div class="blur-overlay" id="blur-overlay" onClick="toggleSideMenu()"></div>
+{% endmacro %}

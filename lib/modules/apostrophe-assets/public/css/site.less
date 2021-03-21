@@ -14,8 +14,9 @@
 @import './components/blogPreview.less';
 @import './components/blog-post.less';
 @import './components/testimonials.less';
+@import './components/side-menu.less';
 
-// Global css style begin with gl-
+
 html, body {
     margin: 0;
     // height: 100%;
@@ -32,19 +33,22 @@ html, body {
     width: 100%;
 }
 
+// Hide image title
+.apos-image-widget-image-title {
+    display: none;
+}
 
 // Overflow here to fix header and footer
 .gl-header-spacing {
     height: 60px;
 }
 
-.gl-main-content {
-    max-width: @desktopMaxWidth;
-    margin-right: auto;
-    margin-left: auto;
-}
+@media only screen and (min-width: 1280px) {
+    // Global css style begin with gl-
+    .gl-main-content {
+        max-width: @desktopMaxWidth;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-// Hide image title
-.apos-image-widget-image-title {
-    display: none;
 }
