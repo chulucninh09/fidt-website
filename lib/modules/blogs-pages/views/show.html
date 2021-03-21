@@ -13,7 +13,8 @@
                 {{ apos.singleton(data.piece, 'preview', 'apostrophe-rich-text') }}
             </div>
             <div class="blog-post__cover-image">
-                <img src="{{ imgSrc }}" alt="">
+                {# <img src="{{ imgSrc }}" alt=""> #}
+                {{apos.singleton(data.piece, 'coverImage', 'apostrophe-images')}}
             </div>
             <div class="blog-post__content">
                 {{ apos.area(data.piece, 'content', {
