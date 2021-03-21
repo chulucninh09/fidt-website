@@ -39,6 +39,7 @@ var apos = require('apostrophe')({
     'left-products-widgets': {},
     'right-products-widgets': {},
     'about-us-banner-widgets': {},
+    'testimonials-widgets': {},
     'footer-widgets': {},
     
     // Page builder widgets

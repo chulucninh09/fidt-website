@@ -1,0 +1,19 @@
+{% macro singleTestimonial(testimonial) %}
+<div class="single-testimonial__container">
+    <img src="{{ apos.attachments.url(testimonial._customerImage.attachment) }}" scrset="{{ apos.images.srcset(testimonial._customerImage.attachment) }}" class="single-testimonial__image">
+    <div class="single-testimonial__name">{{ testimonial.customerName }}</div>
+    <div class="single-testimonial__title">{{ testimonial.customerTitle }}</div>
+    <div class="single-testimonial__comments">
+        {{ apos.singleton(testimonial, 'customerComments', 'apostrophe-rich-text') }}
+    </div>
+</div>
+{% endmacro %}
+<div class="testimonials__container">
+    <div class="testimonials__title">{{ apos.singleton(data.widget, 'title', 'apostrophe-rich-text') }}</div>
+    <div class="testimonials__tagline">{{ apos.singleton(data.widget, 'tagline', 'apostrophe-rich-text') }}</div>
+    <div class="testimonials__list">
+        {% for testimonial in data.widget.testimonials %}
+        {{ singleTestimonial(testimonial) }}
+        {% endfor %}
+    </div>
+</div>
