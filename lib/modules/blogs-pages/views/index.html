@@ -1,6 +1,10 @@
 {% from "components/blogPreview.html" import blogPreview %}
+{% from "components/button.html" import button %}
 
 {% extends "layout.html" %}
+
+{% set nextPage = data.currentPage + 1 %}
+{% set previousPage = data.currentPage - 1 %}
 
 {% block main %}
 <div class="gl-main-content">
@@ -9,6 +13,15 @@
         {% for blog in data.pieces %}
             {{ blogPreview(blog) }}
         {% endfor %}
+        
+        <div class="blog-list__pagination">
+            {% if data.currentPage > 1 %}
+                {{ button(data.url | build({page: previousPage, append: 1}), "<<< Trước", type='flat') }}
+            {% endif %}
+            {% if data.currentPage < data.totalPages %}
+                {{ button(data.url | build({page: nextPage, append: 1}), "Sau >>>", type='flat') }}
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}
