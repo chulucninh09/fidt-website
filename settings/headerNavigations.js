@@ -2,7 +2,7 @@ module.exports = [
     {
         type: "single",
         title: "Về chúng tôi",
-        url: "/about-us"
+        url: "/#about-us"
     },
     {
         type: "dropdown",
