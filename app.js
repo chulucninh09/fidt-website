@@ -29,6 +29,22 @@ var apos = require('apostrophe')({
     'apostrophe-images': {
       enableAltField: true
     },
+
+    // Menu button grouping
+    'apostrophe-admin-bar': {
+      addGroups: [
+        {
+          label: 'Admin tools',
+          items: [
+            'apostrophe-global',
+            'apostrophe-pages',
+            'apostrophe-users',
+            'apostrophe-images',
+            'apostrophe-files'
+          ]
+        }
+      ]
+    },
     
     // Helper module
     'helpers': {extend: 'apostrophe-module'},
