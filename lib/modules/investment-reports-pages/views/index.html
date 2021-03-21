@@ -1,0 +1,14 @@
+{% from "components/blogPreview.html" import blogPreview %}
+
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="gl-main-content">
+    {{ apos.singleton(data.page, "featuredPost", 'featured-investment-report', {}) }}
+    <div class="blog-list__container">
+        {% for blog in data.pieces %}
+            {{ blogPreview(blog) }}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

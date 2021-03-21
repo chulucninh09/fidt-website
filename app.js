@@ -51,6 +51,12 @@ var apos = require('apostrophe')({
     'blogs': {},
     'blogs-widgets': {},
     'blogs-pages': {},
-    'featured-post-widgets': {}
+    'featured-post-widgets': {},
+
+    // Investment reports
+    'investment-reports': {},
+    'investment-reports-widgets': {},
+    'investment-reports-pages': {},
+    'featured-investment-report-widgets': {}
   }
 });
