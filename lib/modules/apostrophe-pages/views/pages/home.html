@@ -10,6 +10,7 @@
 {% block main %}
   <div id="gl-main-content" class="gl-main-content">
     {{ apos.singleton(data.page, 'homepageBanner', 'homepage-banner', {}) }}
+    {{ apos.singleton(data.page, 'showOffBar', 'homepage-show-off-bar', {}) }}
     {# {{ apos.singleton(data.page, 'blogPostList', 'blogs') }} #}
     {# {{ apos.singleton(data.page, 'investmentReports', 'investment-reports') }} #}
 
@@ -22,7 +23,7 @@
     }) }} #}
 
     {# {{ apos.singleton(data.page, 'aboutUsBanner', 'about-us-banner', {}) }} #}
-    {# {{ apos.singleton(data.page, 'showOffBar', 'homepage-show-off-bar', {}) }} #}
+    
     {# {{ apos.singleton(data.page, 'testemonials', 'testimonials') }} #}
   </div>
 {% endblock %}
