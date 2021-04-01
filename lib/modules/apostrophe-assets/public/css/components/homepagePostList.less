@@ -52,13 +52,16 @@
     .homepage-post-list-container {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 50px;
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 5px solid @orangeDark;
 
-        display: flex;
+        display: inline-flex;
         height: 335px;
         max-width: 100vh;
 
         .vertical-line {
+            display: none;
             height: 100%;
             width: 5px;
             background-color: @orangeDark;
@@ -86,6 +89,8 @@
             .post-list {
                 padding-top: 20px;
                 display: flex;
+                width: 97vw;
+                overflow-x: auto;
 
                 .homepage-post-container {
                     margin-right: 50px;
