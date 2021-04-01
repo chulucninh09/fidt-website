@@ -2,22 +2,16 @@
 {% set imageSrc = apos.attachments.url(img) %}
 
 <div class="right-product-widget__container" id="products">
-    <div class="right-product-widget__content-container">
-        <div class="right-product-widget__top-border"></div>
-        <div class="right-product-widget__image-container">
-            <img src="{{ imageSrc }}" alt="">
-        </div>        
-        <div class="right-product-widget__info-container">
-            <div class="right-product-widget__category">{{ data.widget.category }}</div>
-            <div class="right-product-widget__product-name-1">{{ data.widget.productName1 }}</div>
-            <div class="right-product-widget__product-name-2">{{ data.widget.productName2 }}</div>
-            <div class="right-product-widget__product-description">{{ apos.singleton(data.widget, 'description', 'apostrophe-rich-text', {} ) }}</div>
-            <form action="{{ data.widget.detailsLink }}" class="right-product-widget__see-more-container">
-                <button class="right-product-widget__see-more-button">
-                    XEM THÊM
-                </button>
-            </form>
-        </div>
+    <img class="right-product-widget__image-container" src="{{ imageSrc }}" alt="">
+    
+    <div class="right-product-widget__category">{{ data.widget.category }}</div>
+    
+    <div class="right-product-widget__info-container">
+        <div class="right-product-widget__product-name-1">{{ data.widget.productName1 }}</div>
+        <div class="right-product-widget__product-name-2">{{ data.widget.productName2 }}</div>
+        <div class="right-product-widget__product-description">{{ apos.singleton(data.widget, 'description', 'apostrophe-rich-text', {} ) }}</div>
+        <a href="{{ data.widget.detailsLink }}" class="right-product-widget__see-more-button">
+            XEM THÊM >>
+        </a>
     </div>
-    <div class="right-product-widget__side-column"></div>
 </div>
