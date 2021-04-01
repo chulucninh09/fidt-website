@@ -1,7 +1,7 @@
 {% from "components/postTag.html" import postTag%}
 
 {% macro homepageYoutubeVideo(post) %}
-    <a class="homepage-post-container" href="{{ post.youtubeLink }}">
+    <a class="homepage-post-container" href="{{ post.youtubeLink }}" target="_blank">
         <img src="{{ apos.attachments.url(apos.images.first(post.coverImage)) }}" alt="">
         <div class="title">{{ post.title }}</div>
         <div class="tags">
