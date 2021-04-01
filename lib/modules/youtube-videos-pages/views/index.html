@@ -1,0 +1,52 @@
+{% from "components/postTag.html" import postTag %}
+{% from "components/button.html" import button %}
+
+{% extends "layout.html" %}
+
+{% macro youtubeVideoPreview(video) %}
+
+{% set imgObj = apos.images.first(video.coverImage) %}
+{% set imgSrc = apos.attachments.url(imgObj) %}
+
+<a class="blog-preview__container" target="_blank" href="{{ video.youtubeLink }}" >
+    <div class="blog-preview__border-top"></div>
+    <div class="blog-preview__content-container">
+        <div class="blog-preview__cover-image">
+            <img src="{{ imgSrc }}" alt="">
+        </div>
+        <div class="blog-preview__info-container">
+            {# {{ apos.log(blog.preview.items[0].content) }} #}
+            <div class="blog-preview__title">{{ video.title }}</div>
+            <div class="blog-preview__issue-date">{{ video.issueDate }}</div>
+            <div class="blog-preview__tags">
+                {% for tag in video.tags %}
+                    {{ postTag(tag) }}
+                {% endfor %}
+            </div>
+            <div class="blog-preview__preview">{{ video.preview.items[0].content | safe }}</div>
+        </div>
+    </div>
+</a>
+{% endmacro %}
+
+{% set nextPage = data.currentPage + 1 %}
+{% set previousPage = data.currentPage - 1 %}
+
+{% block main %}
+<div class="gl-main-content">
+    <div class="blog-list__container">
+        {% for video in data.pieces %}
+            {{ blogPreview(video) }}
+        {% endfor %}
+    </div>
+    
+    <div class="blog-list__pagination">
+        {% if data.currentPage > 1 %}
+            {{ button(data.url | build({page: previousPage, append: 1}), "<<< Trước", type='flat') }}
+        {% endif %}
+        {% if data.currentPage < data.totalPages %}
+            {{ button(data.url | build({page: nextPage, append: 1}), "Sau >>>", type='flat') }}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

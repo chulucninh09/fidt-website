@@ -1,0 +1,33 @@
+{% from "components/postTag.html" import postTag%}
+
+{% macro homepageYoutubeVideo(post) %}
+    <a class="homepage-post-container" href="{{ post.youtubeLink }}">
+        <img src="{{ apos.attachments.url(apos.images.first(post.coverImage)) }}" alt="">
+        <div class="title">{{ post.title }}</div>
+        <div class="tags">
+            {% for tag in post.tags %}
+                {{ postTag(tag) }}
+            {% endfor %}
+        </div>
+        <div class="short-note">{{ apos.areas.richText(post.preview) }}</div>
+        <div class="placeholder"></div>
+        <div class="divider"></div>
+        <div class="date">{{ post.issueDate }}</div>
+    </a>
+{% endmacro %}
+
+<div class="homepage-post-list-container">
+    <div class="vertical-line"></div>
+    <div class="body">
+        <div class="header">
+            <span>Gờ Ráp chứng khoán</span>
+            <a href="/spotlight/grap-chung-khoan">Xem thêm >>></a>
+        </div>
+        <div class="post-list">
+            {% for post in data.widget._pieces %}
+                {{ homepageYoutubeVideo(post) }}
+                {# {{ apos.log(post) }} #}
+            {% endfor %}
+        </div>
+    </div>
+</div>

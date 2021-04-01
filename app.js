@@ -73,6 +73,11 @@ var apos = require('apostrophe')({
     'investment-reports': {},
     'investment-reports-widgets': {},
     'investment-reports-pages': {},
-    'featured-investment-report-widgets': {}
+    'featured-investment-report-widgets': {},
+
+    // Youtube videos
+    'youtube-videos': {},
+    'youtube-videos-widgets': {},
+    'youtube-videos-pages': {}
   }
 });
