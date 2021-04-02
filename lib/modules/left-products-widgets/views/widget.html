@@ -8,7 +8,9 @@
     <div class="left-product-widget__info-container">
         <div class="left-product-widget__product-name-1">{{ data.widget.productName1 }}</div>
         <div class="left-product-widget__product-name-2">{{ data.widget.productName2 }}</div>
-        <div class="left-product-widget__product-description">{{ apos.singleton(data.widget, 'description', 'apostrophe-rich-text', {} ) }}</div>
+        <div class="left-product-widget__product-description">{{ apos.singleton(data.widget, 'description', 'apostrophe-rich-text', {
+                toolbar: apos.helpers.richTextToolbar
+            } ) }}</div>
         <a href="{{ data.widget.detailsLink }}" class="left-product-widget__see-more-button">
             XEM THÊM >>
         </a>
