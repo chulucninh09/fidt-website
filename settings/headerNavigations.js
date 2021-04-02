@@ -7,18 +7,18 @@ module.exports = [
     {
         type: "single",
         title: "Tư vấn đầu tư",
-        url: "#"
+        url: "https://products.fidt.vn/cci"
     },
     {
         type: "single",
         title: "Quản lý tài sản",
-        url: "#"
+        url: "https://products.fidt.vn/apm"
     },
-    {
-        type: "single",
-        title: "Đào tạo",
-        url: "#"
-    },
+    // {
+    //     type: "single",
+    //     title: "Đào tạo",
+    //     url: "#"
+    // },
     {
         type: "single",
         title: "Ấn phẩm đầu tư",
