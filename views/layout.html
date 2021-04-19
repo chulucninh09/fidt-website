@@ -51,6 +51,18 @@
   </script>
 {% endif %}
 
+{# google analytics tracking #}
+{% if apos.settings.getOption('gAnalytics') %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40DFZFHWE9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-40DFZFHWE9');
+</script>
+{% endif %}
 
 {% endblock %}
 
