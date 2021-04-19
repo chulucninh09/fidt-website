@@ -1,3 +1,6 @@
+{% set img = apos.images.first(data.widget.performanceChart) %}
+{% set imageSrc = apos.attachments.url(img) %}
+
 {% macro homepageShowOffItem(showOffItem) %}
 <div class="homepage-show-off-item-container">
     <div class="box"></div>
@@ -13,5 +16,8 @@
         {% for showOffItem in data.widget.showOffItems %}
             {{ homepageShowOffItem(showOffItem) }}
         {% endfor %}
+    </div>
+    <div class="performance-chart">
+        <img src="{{ imageSrc }}" alt="">
     </div>
 </div>
